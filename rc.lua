@@ -14,6 +14,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+-- label for nice powerline style widgets (and other extra widgets)
+local lain = require("lain")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -112,6 +114,8 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock("%d.%m %H:%M")
+-- volume widget
+volume = lain.widget.pulsebar()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
